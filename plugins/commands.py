@@ -37,7 +37,7 @@ async def start(bot, cmd):
                                 InlineKeyboardButton(" 🔄 Try Again", callback_data=f"checksub#{file_id}")
                             ], 
                             [
-                                InlineKeyboardButton(" Group 1", url='https://t.me/CinemaCompany_Group')
+                                InlineKeyboardButton(" Group 1", url='https://t.me/CinemaCompany_Group'), 
                                 InlineKeyboardButton(" Group 2", url='https://t.me/Cinema_Talkies_Group') 
                             ]
                         ]
