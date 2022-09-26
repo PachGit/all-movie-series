@@ -142,9 +142,9 @@ async def group(client, message):
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=f"<b>Here is The Files Of `{search}` ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
             else:
-                await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(f"<b>Here is The Files Of`{search}` ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
@@ -158,9 +158,9 @@ async def group(client, message):
         )
         poster = await get_poster(search) if API_KEY else None
         if poster:
-            await message.reply_photo(photo=poster, caption=f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=f"<b>Here is The Files Of `{search}` ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(f"<b>Here is The Files Of`{search}` ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
 
     
 def get_size(size):
@@ -248,11 +248,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Owner', url='https://t.me/Ramanan_TG'),
-                    InlineKeyboardButton('Group', url='https://t.me/Cinema_Beacon_Group')
+                    InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'),
+                    InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')
                 ]
                 ]
-            await query.message.edit(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nOwner : <a href='https://t.me/Ramanan_TG'>Ramanan</a>\nGroup : <a href='https://t.me/Cinema_Beacon_Group'>📀 ᴄɪɴᴇᴍᴀ ʙᴇᴀᴄᴏɴ 📀</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nOwner : <a href='https://t.me/njnmyr'>🐼🐼</a>\nGroup 1 : <a href='https://t.me/CinemaCompany_Group'>📀 ᴄɪɴᴇᴍᴀ ᴄᴏᴍᴘᴀɴʏ 📀</a>\n<a href='https://t.me/Cinema_Talkies_Group'>📀 ᴄɪɴᴇᴍᴀ ᴛᴀʟᴋɪᴇꜱ 📀</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
 
@@ -273,8 +273,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Owner', url='https://t.me/Ramanan_TG'),
-                        InlineKeyboardButton('Group', url='https://t.me/Cinema_Beacon_Group')
+                        InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'),
+                        InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')
                     ]
                     ]
 
