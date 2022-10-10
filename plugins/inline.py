@@ -91,7 +91,8 @@ def get_reply_markup(query):
     buttons = [
         [
            InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'),
-           InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')
+           InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
+           InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
         ]
         ]
     return InlineKeyboardMarkup(buttons)
