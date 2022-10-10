@@ -31,6 +31,11 @@ async def filter(client, message):
                     [
                         [
                             InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                        ],
+                        [
+                            InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'), 
+                            InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
+                            InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
                         ]
                     ]
                 ),
@@ -81,10 +86,10 @@ async def filter(client, message):
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=f"<b>Here is The Files Of '<u><i>{search}</i></u>' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=f"<b>Here is what i found for your query '<u><i>{search}</i></u>' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
 
             else:
-                await message.reply_text(f"<b>Here is  The Files Of '<u><i>{search}</u></i>' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(f"<b>Here is what i found for your query '<u><i>{search}</u></i>' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
@@ -98,9 +103,9 @@ async def filter(client, message):
         )
         poster = await get_poster(search) if API_KEY else None
         if poster:
-            await message.reply_photo(photo=poster, caption=f"<b>Here is The Files Of '`{search}`' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=f"<b>Here is what i found for your query '<u><i>{search}</u></i>' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(f"<b>Here is The Files Of '`{search}`' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(f"<b>Here is what i found for your query '<u><i>{search}</u></i>' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
 
 @Client.on_message(filters.text & filters.group & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.group & filters.incoming)
 async def group(client, message):
@@ -158,9 +163,9 @@ async def group(client, message):
         )
         poster = await get_poster(search) if API_KEY else None
         if poster:
-            await message.reply_photo(photo=poster, caption=f"<b>Here is The Files Of '<u><i>{search}</u></i>' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=f"<b>Here is what i found for your query '<u><i>{search}</u></i>' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(f"<b>Here is The Files Of '<u><i>{search}</i></u>' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(f"<b>Here is what i found for your query '<u><i>{search}</i></u>' ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
 
     
 def get_size(size):
@@ -194,7 +199,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             try:
                 data = BUTTONS[keyword]
             except KeyError:
-                await query.answer("You are using this for one of my old message, please send the request again.",show_alert=True)
+                await query.answer("You are using this for one of my old message, please search again.",show_alert=True)
                 return
 
             if int(index) == int(data["total"]) - 2:
@@ -222,7 +227,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             try:
                 data = BUTTONS[keyword]
             except KeyError:
-                await query.answer("You are using this for one of my old message, please send the request again.",show_alert=True)
+                await query.answer("You are using this for one of my old message, please search again.",show_alert=True)
                 return
 
             if int(index) == 1:
@@ -249,10 +254,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons = [
                 [
                     InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'),
-                    InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')
+                    InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
+                    InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
                 ]
                 ]
-            await query.message.edit(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nOwner : <a href='https://t.me/njnmyr'>🐼🐼</a>\nGroup 1 : <a href='https://t.me/CinemaCompany_Group'>📀 ᴄɪɴᴇᴍᴀ ᴄᴏᴍᴘᴀɴʏ 📀</a>\nGroup 2 : <a href='https://t.me/Cinema_Talkies_Group'>📀 ᴄɪɴᴇᴍᴀ ᴛᴀʟᴋɪᴇꜱ 📀</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nGroup 1 : <a href='https://t.me/CinemaCompany_Group'>📀 ᴄɪɴᴇᴍᴀ ᴄᴏᴍᴘᴀɴʏ 📀</a>\nGroup 2 : <a href='https://t.me/Cinema_Talkies_Group'>📀 ᴄɪɴᴇᴍᴀ ᴛᴀʟᴋɪᴇꜱ 📀</a>\nGroup 3 : <a href='https://t.me/MalluTalkies_Group'>ᴍᴀʟʟᴜ ᴛᴀʟᴋɪᴇꜱ</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
 
@@ -274,7 +280,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = [
                     [
                         InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'),
-                        InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')
+                        InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
+                        InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
                     ]
                     ]
 
@@ -306,7 +313,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = [
                     [
                         InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'),
-                        InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')
+                        InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
+                        InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
                     ]
                     ]
 
