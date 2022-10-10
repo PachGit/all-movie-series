@@ -38,7 +38,8 @@ async def start(bot, cmd):
                             ], 
                             [
                                 InlineKeyboardButton(" Group 1", url='https://t.me/CinemaCompany_Group'), 
-                                InlineKeyboardButton(" Group 2", url='https://t.me/Cinema_Talkies_Group') 
+                                InlineKeyboardButton(" Group 2", url='https://t.me/Cinema_Talkies_Group'),
+                                InlineKeyboardButton(" Group 3", url='https://t.me/MalluTalkies_Group')
                             ]
                         ]
                     ),
@@ -71,7 +72,8 @@ async def start(bot, cmd):
                 buttons = [
                     [
                         InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'),
-                        InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')
+                        InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'),
+                        InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
                     ]
                     ]
                 await bot.send_cached_media(
@@ -104,7 +106,8 @@ async def start(bot, cmd):
                 [
                     [
                         InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'),
-                        InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')
+                        InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
+                        InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
                     ],
                     [
                         InlineKeyboardButton("About", callback_data="about")
@@ -197,7 +200,8 @@ async def bot_info(bot, message):
     buttons = [
         [
             InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'),
-            InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')
+            InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
+            InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
         ]
         ]
-    await message.reply(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nOwner : <a href='https://t.me/njnmyr'>🐼🐼</a>\nGroup 1 : <a href='https://t.me/CinemaCompany_Group'>📀 ᴄɪɴᴇᴍᴀ ᴄᴏᴍᴘᴀɴʏ 📀</a>\nGroup 2 : <a href='https://t.me/Cinema_Talkies_Group'>📀 ᴄɪɴᴇᴍᴀ ᴛᴀʟᴋɪᴇꜱ 📀</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply(text="Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nGroup 1 : <a href='https://t.me/CinemaCompany_Group'>📀 ᴄɪɴᴇᴍᴀ ᴄᴏᴍᴘᴀɴʏ 📀</a>\nGroup 2 : <a href='https://t.me/Cinema_Talkies_Group'>📀 ᴄɪɴᴇᴍᴀ ᴛᴀʟᴋɪᴇꜱ 📀</a>\nGroup 3 :<a href='https://t.me/MalluTalkies_Group'>ᴍᴀʟʟᴜ ᴛᴀʟᴋɪᴇꜱ</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
