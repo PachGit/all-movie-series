@@ -14,8 +14,8 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/PachGit/auto-fast-4gb",
-    "repository": "https://github.com/PachGit/auto-fast-4gb",
+    "website": "https://github.com/PachGit/all-movie-series",
+    "repository": "https://github.com/PachGit/all-movie-series",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
