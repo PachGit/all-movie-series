@@ -67,11 +67,11 @@ async def filter(client, message):
             await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
             return
         
-       buttons.append(
-           [InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group')], 
-           [InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')], 
-           [InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')]
-       )
+            buttons.append(
+                [InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group')], 
+                [InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')], 
+                [InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')]
+            )
 
         if not btn:
             return
