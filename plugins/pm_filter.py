@@ -136,6 +136,15 @@ async def group(client, message):
             btn.append(
                 [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
             )
+            
+            btn.insert(0,
+                [
+                    InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'), 
+                    InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
+                    InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
+                ]
+            )
+            
         if not btn:
             return
 
