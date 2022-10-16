@@ -66,14 +66,6 @@ async def filter(client, message):
         else:
             await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
             return
-        
-            btn.insert(0,
-                [
-                    InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'), 
-                    InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
-                    InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
-                ]
-            )
 
         if not btn:
             return
@@ -120,7 +112,11 @@ async def group(client, message):
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
     if 2 < len(message.text) < 50:
-        btn = []
+        btn = [[
+                    InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'), 
+                    InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
+                    InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group'),
+              ]]
         search = message.text
         nyva=BOT.get("username")
         if not nyva:
@@ -133,13 +129,6 @@ async def group(client, message):
         for file in files:
             file_id = file.file_id
             filename = f"[{get_size(file.file_size)}] {file.file_name}"
-            btn.insert(0,
-                [
-                    InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'), 
-                    InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group'), 
-                    InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
-                ]
-            )
             btn.append(
                 [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
             )
