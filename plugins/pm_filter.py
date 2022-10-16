@@ -133,12 +133,6 @@ async def group(client, message):
         for file in files:
             file_id = file.file_id
             filename = f"[{get_size(file.file_size)}] {file.file_name}"
-            btn.append(
-                [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
-            )
-        if not btn:
-            return
-            
             btn.insert(0,
                 [
                     InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'), 
@@ -146,6 +140,11 @@ async def group(client, message):
                     InlineKeyboardButton('Group 3', url='https://t.me/MalluTalkies_Group')
                 ]
             )
+            btn.append(
+                [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
+            )
+        if not btn:
+            return
 
         if len(btn) > 10: 
             btns = list(split_list(btn, 10)) 
